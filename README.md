@@ -32,12 +32,7 @@ based on displayed images. It's straightforward, interactive, and perfect for fa
 ```
 git clone https://github.com/danielwonglianyi/senpaiknowsbest.git
 ```   
-2. Navigate to the project folder:
-```
-cd assignment
-```  
-   
-3. Open `index.html` in your browser to start the game
+2. Open `index.html` in your browser to start the game
 
 ## Technologies Used
 * **HTML5:** for structuring the web pages
