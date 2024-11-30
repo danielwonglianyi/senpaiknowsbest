@@ -18,30 +18,49 @@
             <p class="lead">Ready to earn Senpai's acknowledgment, dear kouhai? (｀･ω･´)ゞ Take this sacred anime quiz and prove your worth! がんばって!</p>
         </section>
 
-        <form action="quiz.html">
+        <form action="quiz.html" id="usernameForm">
             <!--Username input text field-->
-                <label for="inputUsername" class="form-label">Enter your username, kouhai! (≧∇≦)</label>
-                <div class="col-6 mx-auto">
-                    <div class="input-group mb-3 col-6 mx-auto">
+            <label for="inputUsername" class="form-label">Enter your username, kouhai! (≧∇≦)</label>
+            <div class="col-6 mx-auto">
+                <div class="input-group mb-3 col-6 mx-auto">
                     <span class="input-group-text" id="basic-add-on">@</span>
-                    <input type="text" id="inputUsername" class="form-control" placeholder="E.g. johndoe"
-                    pattern:[A-Za-z0-9] maxlength="20" size="22" required></div>
-                </span>
+                    <input 
+                        type="text"
+                        id="inputUsername"
+                        class="form-control"
+                        placeholder="E.g. johndoe"
+                        pattern="[A-Za-z0-9]+" 
+                        maxlength="20"
+                        size="22"
+                        required>
                 </div>
-
-                <button class="btn btn-dark" type="submit" id="btn-submit">Start Now</button>
-        
+            </div>
+            <button class="btn btn-dark" type="submit" id="btn-submit">Start Now</button>
         </form>
-    </main>
-
-    <footer class="fixed-bottom"><small>
-        &copy 2024 Senpai Knows Best. For educational purposes only.
-    </small></footer>
-    </div>
-
-    <script>
-        const username = document.getElementById("inputUsername").value;
-        localStorage.setItem("username", username);
+        </main>
+        
+        <footer class="fixed-bottom">
+            <small>&copy; 2024 Senpai Knows Best. For educational purposes only.</small>
+        </footer>
+        
+        <script>
+            const form = document.getElementById('usernameForm');
+        
+            form.addEventListener('submit', function (event) {
+                event.preventDefault(); // Prevent the default form submission
+        
+                const username = document.getElementById('inputUsername').value;
+        
+                if (username) {
+                    localStorage.setItem('username', username); // Store username in localStorage
+        
+                    // Redirect to the quiz page after storing the username
+                    window.location.href = form.action; 
+                } else {
+                    alert('Please enter a valid username.');
+                }
+            });
+        </script> 
     </script>
 
     <!--Bootstrap JS-->

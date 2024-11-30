@@ -106,7 +106,6 @@ function refreshPage() {
 
     // Retrieve the username from localStorage
     const username = localStorage.getItem("username") || "Participant";
-    console.log("Retrieved username:". username);
 
     if (questionCount > questionLimit) {
         document.getElementById("btn-next").style.display = "none";
